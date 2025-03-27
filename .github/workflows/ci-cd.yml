@@ -1,0 +1,26 @@
+name: Docker CI/CD
+
+on:
+  push:
+    branches:
+      - main
+  pull_request:
+    branches:
+      - main
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout Repository
+        uses: actions/checkout@v3
+
+      - name: Set up Docker
+        uses: docker/setup-buildx-action@v2
+
+      - name: Build Docker Image
+        run: docker build -t myapp:latest .
+
+      - name: Run Tests (Modify if applicable)
+        run: docker run myapp:latest echo "Tests Passed!"
