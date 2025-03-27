@@ -9,6 +9,7 @@ This project demonstrates how to use GStreamer, GLib, and Python's threading mod
 - Python bindings for GStreamer (PyGObject)
 - Pillow (for image processing)
 - NumPy (for frame manipulation)
+- TensorFlow (for running the FaceNet model)
 
 ### Installing Dependencies
 
