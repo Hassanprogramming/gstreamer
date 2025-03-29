@@ -1,0 +1,29 @@
+# GStreamer Configuration
+gstreamer:
+  device: "/dev/video0"  # Change based on your webcam device
+  frame_format: "RGB"
+  appsink_name: "sink"
+  max_buffers: 1
+  drop_buffers: true
+  debug_mode: true  # Set to false to disable video output
+
+# FaceNet Model Configuration
+facenet:
+  model_path: "face_net.pb"
+  input_tensor_name: "input:0"
+  output_tensor_name: "embeddings:0"
+  phase_train_tensor_name: "phase_train:0"
+  image_size: 160  # Input size for FaceNet model
+
+# Logging Configuration
+logging:
+  log_file: "app.log"
+  log_level: "INFO"
+
+# Image Processing
+image_processing:
+  save_debug_image: false  # Set to true to be able saving debug images
+  debug_image_path: "image.png"
+
+tensorflow:
+  use_gpu: true
